@@ -4,10 +4,13 @@
 
 int main (void)
 {
-	char x;
-	printf("Tachschen!");
+	char x = ',';
+	gotoXY(5,7);
+	printf("A");
 	x = getch();  // input without ENTER
-	printf("\nIhre Eingabe ist %c", x);
+	printf("Ihre Eingabe ist %c", x);
+	
+	
 	return 0;
 }
 
