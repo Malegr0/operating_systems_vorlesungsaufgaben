@@ -6,6 +6,9 @@
 #include <unistd.h>
 //#include <time.h>
 
+// Key definitions
+#define K_ESC 27
+
 // Datatypes
 typedef struct PunktSTRU
 {

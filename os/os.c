@@ -14,14 +14,14 @@ int main (void)
 	gotoXY(1,23);
 	printf("Another message");
 	
-	p.x = 11;
-	p.y = 12;
-	Show (p, 'W');
-	sleep(1);
-	Hide (p);
-	p.x = 5;
-	p.y = 4;
-	Show (p, 'W');
+	do
+	{
+		x = getch();
+		p.x = 7;
+		p.y = 7;
+		Show(p, x);
+	}
+	while ( x != K_ESC );
 	
 	
 	finish();
