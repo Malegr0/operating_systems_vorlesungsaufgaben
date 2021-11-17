@@ -8,5 +8,6 @@
 
 //interface
 void gotoXY (int x, int y);
-void Cursor(int x);
-char inkey (void);
+void Cursor (int x);
+int  getch  (void);
+//char inkey  (void);

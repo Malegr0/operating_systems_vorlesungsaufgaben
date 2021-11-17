@@ -1,6 +1,6 @@
 #include "os.h"
 
-/*
+
 void gotoXY (int x, int y)
 {
   COORD k;
@@ -21,6 +21,7 @@ void Cursor(int x)  //  cursor 1/0 = ON/OFF
     }
 }
 
+/*
 char inkey (void)
 {
     char x = '\0';
