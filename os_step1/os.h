@@ -11,3 +11,5 @@ void gotoXY (int x, int y);
 void Cursor (int x);
 int  getch  (void);
 //char inkey  (void);
+void init   (void);
+void finish (void);
