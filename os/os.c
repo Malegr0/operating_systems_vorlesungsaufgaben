@@ -10,16 +10,17 @@ int main (void)
 	init();
 	
 	gotoXY(0,22);
-	printf("This is a test for threads");
+	printf("ESC - to exit");
 	gotoXY(1,23);
 	printf("Another message");
 	
 	do
 	{
 		x = getch();
-		p.x = 7;
-		p.y = 7;
-		Show(p, x);
+		if ('a' <= x && x <= 'z')
+		{
+			ManageThreads(x);
+		}
 	}
 	while ( x != K_ESC );
 	

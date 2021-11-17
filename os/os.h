@@ -26,3 +26,4 @@ void init   (void);
 void finish (void);
 void Show   (Punkt p, char x);
 void Hide   (Punkt p);
+void ManageThreads(char c);
