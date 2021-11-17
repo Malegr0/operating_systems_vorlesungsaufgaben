@@ -29,3 +29,15 @@ char inkey (void)
     return x;
 }
 */
+
+void Show (Punkt p, char x)
+{
+	gotoXY(p.x, p.y);
+	putchar(x);
+}
+
+void Hide (Punkt p)
+{
+	Show(p, ' ');
+}
+
