@@ -18,9 +18,11 @@ void main(void)
 {
 	pthread_t ID[COUNT];
 	int j;
+	int myID[COUNT];
 	for(j = 0; j < COUNT; j++)
 	{
-		pthread_create (&ID[j], NULL, &ThrdFunc, &ID[j]); 	// &ID -> fortlaufende Nummer startet mit 1
+		myID[j] = j+1;
+		pthread_create (&ID[j], NULL, &ThrdFunc, &myID[j]); 	// &ID -> fortlaufende Nummer startet mit 1
 												// NULL -> Initialisierungsparameter, hier Standardparameter
 												// &ThrdFunc -> Funktion, die übergeben wird, die ausgeführt wird
 												// Adresse
