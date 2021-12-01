@@ -45,7 +45,6 @@ PCB* InitThread(char);
 void RunThread(PCB*);
 void* ProgH(void* arg);
 void* ProgV(void* arg);
-void* ProgR(void* arg);
 
 // global variables
 PCB* gFirstItem;

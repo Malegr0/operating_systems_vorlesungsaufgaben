@@ -70,8 +70,3 @@ void* ProgV(void* arg) // vertical moving
 		}
 	}
 }
-
-void* ProgR(void* arg) // random moving
-{
-	
-}
