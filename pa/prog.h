@@ -32,6 +32,5 @@ void* ThrdFunc(void *arg);
 
 // global variables
 Node* gNodeFirst;
-Node* gNodeCurrent;
 Node* gNodeLast;
 int gNodeSize;

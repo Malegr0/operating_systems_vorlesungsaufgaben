@@ -4,8 +4,8 @@
 void init(void)
 {
 	gNodeSize = sizeof(Node);
-	
-	//create first list item
+	gNodeFirst = NULL;
+	gNodeLast = NULL;
 	
 	GenList()
 }
@@ -13,7 +13,16 @@ void init(void)
 void finish(void)
 {
 	ShowList()
-	// delete list
+	
+	Node* current = gNodeFirst;
+	Node* n = NULL;
+	while(current != NULL)
+	{
+		n = cur->next;
+		free(cur);
+		cur = n;
+	}
+	
 }
 
 void GenList(void)
