@@ -50,7 +50,21 @@ void GenList(void)
 
 void Add2List(char fname[MAX_FN_LEN])
 {
+	Node* current = (Node*) malloc(gNodeSize);
+	stpcpy(current->file_name, fname);
+	current->tID = 0;
+	current->next = NULL;
 	
+	if(gNodeFirst == NULL)
+	{
+		gNodeFirst = current;
+		gNodeLast = gNodeFirst;
+	}
+	else
+	{
+		gNodeLast->next = current;
+		gNodeLast = current;
+	}
 }
 
 void Cpy(char fname[MAX_FN_LEN])
