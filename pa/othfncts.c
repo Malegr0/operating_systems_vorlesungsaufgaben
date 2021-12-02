@@ -84,5 +84,11 @@ void Cpy(char fname[MAX_FN_LEN])
 
 void ShowList(void)
 {
+	Node* current = gNodeFirst;
 	
+	while(current != NULL)
+	{
+		printf("name of file: %s | number of thread: %d", current->file_name, current->tID);
+		current = current->next;
+	}
 }
