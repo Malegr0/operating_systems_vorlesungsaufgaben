@@ -7,35 +7,35 @@ void init(void)
 	gNodeFirst = NULL;
 	gNodeLast = NULL;
 	
-	GenList()
+	GenList();
 }
 
 void finish(void)
 {
-	ShowList()
+	ShowList();
 	
 	Node* current = gNodeFirst;
 	Node* n = NULL;
 	while(current != NULL)
 	{
-		n = cur->next;
-		free(cur);
-		cur = n;
+		n = current->next;
+		free(current);
+		current = n;
 	}
-	
 }
 
 void GenList(void)
 {
 	char fname[MAX_FN_LEN];
-	struct dirent* d_ptnr = NULL;
+	DIR* dir = NULL;
+	struct dirent* d_pntr = NULL;
 	
 	dir = opendir(DIR_A);
 	if(dir != NULL)
 	{
-		while((d_ptnr = readdir(dir)) != NULL)
+		while((d_pntr = readdir(dir)) != NULL)
 		{
-			strcpy(fname, (*d_pntr).dname);
+			strcpy(fname, (*d_pntr).d_name);
 			if(strcmp(fname, ".") != 0 && strcmp(fname, "..") != 0)
 			{
 				Add2List(fname);
@@ -44,15 +44,16 @@ void GenList(void)
 	}
 	if(closedir(dir) == -1)
 	{
-		printf("error while closing the dir to read in the filenames");
+		printf("\nError while closing the dir to read in the filenames");
 	}
 }
 
 void Add2List(char fname[MAX_FN_LEN])
 {
 	Node* current = (Node*) malloc(gNodeSize);
-	stpcpy(current->file_name, fname);
+	strcpy(current->file_name, fname);
 	current->tID = 0;
+	pthread_mutex_init(&current->mutex, NULL);
 	current->next = NULL;
 	
 	if(gNodeFirst == NULL)
@@ -102,7 +103,7 @@ void ShowList(void)
 	
 	while(current != NULL)
 	{
-		printf("name of file: %s | number of thread: %d", current->file_name, current->tID);
+		printf("\nname of file: %s | number of thread: %d", current->file_name, current->tID);
 		current = current->next;
 	}
 }

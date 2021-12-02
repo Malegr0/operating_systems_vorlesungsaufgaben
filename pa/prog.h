@@ -2,6 +2,8 @@
 // includes
 #include <pthread.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <dirent.h>
 
 
 // key definition
@@ -17,7 +19,7 @@ typedef struct Node
 	char file_name[MAX_FN_LEN];
 	pthread_mutex_t mutex;
 	pthread_t tID;
-	Node* next;
+	struct Node* next;
 }
 Node;
 
