@@ -10,7 +10,7 @@ void* ThrdFunc(void *arg)
 	{
 		if(current->tID == 0) // check if file is not copied yet
 		{
-			if((pthread_mutex_lock(&current->mutex)) == 0)
+			if((pthread_mutex_lock(&current->mutex)) == 0) // locks mutex and checks if it was successfull
 			{
 				current->tID = (pthread_t) id;
 				pthread_mutex_unlock(&current->mutex);
