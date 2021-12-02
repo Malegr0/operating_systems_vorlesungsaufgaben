@@ -8,6 +8,7 @@ void* ProgH(void* arg) // horizontal moving
 	Punkt p;
 	int Direction = rand()%2;	// 1 to right, 0 to left
 	int Delay = 1 + rand()%3;	// 1,2,3
+	cur->Delay = Delay;
 	p.x = 1 + rand()%X_LENGTH;	// 1..60
 	p.y = 1 + rand()%Y_LENGTH;	// 1..18
 	
@@ -43,6 +44,7 @@ void* ProgV(void* arg) // vertical moving
 	Punkt p;
 	int Direction = rand()%2;	// 1 to down, 0 to up
 	int Delay = 1 + rand()%3;	// 1,2,3
+	cur->Delay = Delay;
 	p.x = 1 + rand()%X_LENGTH;	// 1..60
 	p.y = 1 + rand()%Y_LENGTH;	// 1..18
 	

@@ -9,10 +9,10 @@ int main (void)
 	
 	init();
 	pthread_mutex_lock(&gScreen);
-	gotoXY(0,22);
+	gotoXY(0,2+Y_LENGTH);
 	printf("ESC - to exit");
-	gotoXY(1,23);
-	printf("Another message");
+	gotoXY(1,3+Y_LENGTH);
+	printf("SPACE - task manager");
 	pthread_mutex_unlock(&gScreen);
 	do
 	{
@@ -21,9 +21,13 @@ int main (void)
 		{
 			ManageThreads(x);
 		}
+		if(x == K_SPACE)
+		{
+			TaskMan();	// show threads
+		}
 	}
 	while ( x != K_ESC );
-	
+	StopAllThreads();
 	
 	finish();
 	return 0;

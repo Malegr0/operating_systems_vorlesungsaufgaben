@@ -40,6 +40,7 @@ PCB* InitThread(char fc)
 	p->Face = fc;
 	p->Continue = 1;
 	p->Activity = 1;
+	p->Delay = 99;
 	j = rand()%3; // 0,1,2
 	switch (j)
 	{
@@ -75,4 +76,36 @@ void RunThread(PCB* cur)
 	}
 	
 	cur->tID = th;
+}
+
+void TaskMan(void)
+{
+	PCB* cur = gFirstItem;
+	int x = 2 + X_LENGTH;
+	int y = 0;
+	
+	pthread_mutex_lock(&gScreen);
+	gotoXY(x,y);
+	printf("Info from task manager:");
+	y++;
+	gotoXY(x,y);
+	printf("Face Activity Prog");
+	while(cur != NULL)
+	{
+		y++;
+		gotoXY(x,y);
+		printf("%3c %5i %4c %4i", cur->Face, cur->Activity, cur->Prog, cur->Delay);
+		cur = cur->next;
+	}
+	pthread_mutex_unlock(&gScreen);
+}
+
+void StopAllThreads(void)
+{
+	PCB* cur = gFirstItem;
+	while(cur != NULL)
+	{
+		cur->Continue = 0;
+		cur = cur->next;
+	}
 }

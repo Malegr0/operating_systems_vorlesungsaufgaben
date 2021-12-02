@@ -8,6 +8,8 @@
 
 // Key definitions
 #define K_ESC 27
+#define K_SPACE 32
+#define K_ENTER 13
 #define X_LENGTH 60
 #define Y_LENGTH 18
 
@@ -46,6 +48,8 @@ void RunThread(PCB*);
 void* ProgH(void* arg);
 void* ProgV(void* arg);
 void* ProgR(void* arg);
+void TaskMan(void);
+void StopAllThreads(void);
 
 // global variables
 PCB* gFirstItem;
