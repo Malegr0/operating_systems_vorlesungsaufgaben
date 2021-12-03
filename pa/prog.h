@@ -7,10 +7,11 @@
 
 
 // key definition
-#define MAX_FN_LEN 10	// max length of filename
+#define MAX_FN_LEN 32	// max length of filename
 #define MAX_THREADS 4	// number of threads
-#define DIR_A "./A/"
-#define DIR_B "./B/"
+#define DIR_A "./A/"	// directory a
+#define DIR_B "./B/"	// directory b
+#define DIR_LOG "./logfiles/"	// directory 
 
 
 // datatypes
