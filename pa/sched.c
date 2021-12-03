@@ -7,7 +7,7 @@ void* ThrdFunc(void *arg)
 	
 	int length = snprintf(NULL, 0, "%d", id); 	// get length of id
 	char* id_str = malloc(length + 1);		// allocate memory for the id as string
-	snprintf(id_str, length + 1, "%d", id);	// cast id to string
+	snprintf(id_str, length + 1, "%d", id);	// cast id to string to use is as filename
 	
 	Node* current = gNodeFirst;
 	char log_out[MAX_FN_LEN];
