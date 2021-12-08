@@ -30,13 +30,11 @@ void* ThrdFunc(void *arg)
 			}
 			else
 			{
-				//printf("\nFile %s can not be locked for thread %d. This thread goes to the next file.", current->file_name, *id);
 				fprintf(out, "\nFile %s can not be locked for thread %d. This thread goes to the next file.", current->file_name, *id);
 			}
 		}
 		else
 		{
-			//printf("\nFile %s is currently in copy process by thread %d.", current->file_name, current->tID);
 			fprintf(out, "\nFile %s is currently in copy process by thread %d.", current->file_name, current->tID);
 		}
 		current = current->next;

@@ -59,13 +59,12 @@ void Add2List(char fname[MAX_FN_LEN])
 	if(gNodeFirst == NULL)
 	{
 		gNodeFirst = current;
-		gNodeLast = gNodeFirst;
 	}
 	else
 	{
 		gNodeLast->next = current;
-		gNodeLast = current;
 	}
+	gNodeLast = current;
 }
 
 void Cpy(char fname[MAX_FN_LEN])
